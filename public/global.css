@@ -1,0 +1,16 @@
+body {
+	background-color: #f4f4f4;
+	padding: 0;
+	margin: 0;
+}
+
+main {
+	margin: auto;
+	max-width: 600px;
+}
+
+input[type="text"],
+input[type="date"] {
+	width: 100%;
+	border: solid 1px #ddd;
+}
