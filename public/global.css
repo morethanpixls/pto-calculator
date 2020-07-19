@@ -1,10 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+* {
+	box-sizing: border-box;
+}
 
 body {
 	background-color: #f4f4f4;
 	font-size: 16px;
 	padding: 0;
 	margin: 0;
+}
+
+h1,
+h2 {
+	font-family: "Abril Fatface";
+}
+
+p {
+	font-family: Helvetica, Arial, sans-serif;
 }
 
 main {
@@ -14,5 +26,26 @@ main {
 
 input[type="text"],
 input[type="date"] {
-	border: solid 1px #ddd;
+	border: transparent;
+	font-size: 2rem;
+	padding: 20px;
+	width: 100%;
+}
+
+input[type="date"] {
+	text-align: center;
+	font-family: inherit;
+	margin-bottom: 20px;
+}
+
+input[type="submit"] {
+	background-color: blue;
+	color: #fff;
+	font-family: inherit;
+	width: 100%;
+	padding: 10px;
+	font-size: 2rem;
+	border: none;
+	border-radius: 100px;
+	cursor: pointer;
 }

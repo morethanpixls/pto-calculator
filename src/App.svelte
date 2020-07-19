@@ -1,25 +1,40 @@
 <script>
-    export let initialPTO;
-
-    initialPTO = 30;
+    let availablePTO = 30;
+    let takenPTO = [];
+    $: takenPTO;
+    let desiredPTO = null;
+    $: desiredPTO;
+    
+    function reducePTO() {
+            takenPTO.push(desiredPTO);
+            availablePTO--;
+    }    
 </script>
 
 <main>
-    <h1>PTO</h1>
 
     <div class="message">
-        {#if initialPTO === 0 }
+        {#if availablePTO <= 0 }
             You have no days left.
-        {:else if initialPTO === 1 }
-            You have {initialPTO} day left.
+        {:else if availablePTO === 1 }
+            You have {availablePTO} day left.
         {:else}
-            You have {initialPTO} days left.
+            You have {availablePTO} days left.
         {/if}
     </div>
     
     <div class="card">
-        <input type="date">
-        <input type="submit" value="Add Date">
+        <input type="date" bind:value={desiredPTO}>
+        <input type="submit" value="Add Date" on:click={reducePTO}>
+    </div>
+
+    <div>
+        <ul>
+            {#each takenPTO as day}
+                <li>{takenPTO[day]}</li>
+            {/each}
+        </ul>
+        
     </div>
 </main>
 
